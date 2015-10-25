@@ -162,3 +162,4 @@ Manipulating the filesystem
 
 ::: Other :::
 	10isome text<esc><esc> 	- Insert "some text" 10 times
+
