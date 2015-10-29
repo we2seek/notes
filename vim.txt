@@ -1,0 +1,164 @@
+::: INSERT :::
+o - start new line
+
+::: MOVE :::
+
+w - forward one word (start word)
+b - backward one word
+e - next end of a word
+ge - previous end of word
+W, B, E, gE - the same but with whitespaces
+
+$ - move to END line
+^ - move to first non-blank character of the line
+0 - (zero$) moving to very first character of the line
+
+fz - move to the first occurence char z forward
+Fz - move to the first occurence char z backward
+
+% - matching parenthesis
+
+G - end of file
+nG - n lines down
+gg - start file
+H - HOME
+M - MIDDLE
+L - LAST 
+
+CTRL-U - scroll DOWN half a screen
+CTRL-D - scroll UP
+CTRL-Y - scroll DOWN one line
+CTRL-E - scroll UP one line
+CTRL-F - scroll FORWARD whole screen
+CTRL-B - scroll backward whole screen
+CTRL-O - jump to older cursor position
+CTRL-I - jump back to the newer
+zz, zt, zb - move cursor at the middle top and bottom
+
+
+
+::: SEARCH :::
+
+/the - to find word "the" and "there"
+/the\> - to find "the" in the end word only
+/\<the - to find "the" in the begin of word
+/\<the\> - to find "the" only
+n - next occurence searched word
+N - prev
+* - command to find forward word under cursor.
+# - command to find backward word under cursor
+
+jkj
+:set ignorecase (noignorecase)
+:set hlsearch (nohlsearch) highlight all searched matches
+
+
+
+::: MARKS :::
+
+m[a-z] - set mark by single letter from a to z. Example: ma
+`[a-z] - goto mark
+:marks - list all the marks
+
+	Special marks:
+	'	The cursor position before doing a jump
+	"	The cursor position when last editing the file
+	[	Start of the last change
+	]	End of the last change
+
+
+::: HELP :::
+
+:vert help - open inner vim help in vertical window. You can also control whether the window splits on the top/left or on the right/bottom with "topleft" or "to" and "botright" or "bo". For example to open the help in the right window of a vertical split: 
+	:vert bo help
+
+
+
+::: SPLIT  :::
+
+	CTRL-W and cursor - Jump between the windows
+	CTRL-W h	move to the window on the left
+	CTRL-W j	move to the window below
+	CTRL-W k	move to the window above
+	CTRL-W l	move to the window on the right
+	
+	CTRL-W t	move to the TOP window
+	CTRL-W b	move to the BOTTOM window
+	
+	CTRL-W K move window to the far TOP
+	CTRL-W H --- far LEFT
+	CTRL-W J --- BOTTOM
+	CTRL-W L --- far RIGHT
+
+:split - splits the screen into two windows and leaves the cursor in the top one
+:close - Close the window
+:only - Close all windows, except the current one
+:split two.txt - open second window with given file
+:new - open window on a new, empty file
+
+:vsplit or :vsplit two.txt - vertical split
+:vertical new   or   :vnew   - open vertically split window in a new empty file
+
+	vim -o one.txt two.txt three.txt - open vim with window for a each file splited horisontally. The "-O" argument is used to get vertically split windows.
+
+	:leftabove {cmd}	left or above the current window
+	:aboveleft {cmd}	idem
+	:rightbelow {cmd}	right or below the current window
+	:belowright {cmd}	idem
+	:topleft {cmd}		at the top or left of the Vim window
+	:botright {cmd}		at the bottom or right of the Vim window
+
+
+
+::: BUFFERS :::
+	
+	:vert sb N - open left vertical split (by default) with buffer No. N
+	:vert belowright sb N - the same but right window with buffer
+
+::: MULTIPLE WINDOWS :::
+
+	:e filename      - edit another file
+	:split filename  - split window and load another file
+	ctrl-w up arrow  - move cursor up a window
+	ctrl-ww          - move cursor to another window (cycle)
+	ctrl-w_          - maximize current window
+	ctrl-w=          - make all equal size
+	10 ctrl-w+       - increase window size by 10 lines
+	ctrl-w >         - increase window width
+	ctrl-w <         - reduce window width
+	:vsplit file     - vertical split
+	:sview file      - same as split, but readonly
+	:hide            - close current window
+	:only            - keep only this window open
+	:ls              - show current buffers
+	:b 2             - open buffer #2 in this window
+
+	ctrl-w K (upper) - horisontal split
+	ctrl-w H (upper) - vertical split
+	ctrl-w x         - swap windows    
+	ctrl-w r         - swap windows    
+
+
+
+::: FILE EXPLORER :::
+	
+Open file explorer:
+	
+	:Explore :E		- at directory of current file
+	:Sexplore :Se	- in split at directory of current file
+	:Vexplore :Vex	- in vertical split at directory of current file
+
+	:edit. :e.		- Opens file explorer at current working directory
+	:split. :sp.	- in split at current working directory
+	:vsplit. :vs.	- in vertical split at current working directory
+
+Manipulating the filesystem
+
+	% 					- create a new file
+	d 					- create a new directory
+	R 					- rename the file/directory under the cursor
+	D 					- delete the file/directory under the cursor
+
+
+::: Other :::
+	10isome text<esc><esc> 	- Insert "some text" 10 times
