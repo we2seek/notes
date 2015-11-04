@@ -5,6 +5,11 @@ backup: 	shell> mysqldump -u root -p --databases db_name [db_name2] > dump.sql
 restore:	shell> mysql -uroot -p < dump.sql
 		mysql> source dump.sql
 
+backup table	shell> mysqldump -u root -pInteger7_ db_name table_name > file_name.sql
+
+Turn query result to the text file:
+		SELECT * FROM product INTO OUTFILE '__product.txt' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n';
+
 
 
 SELECT r.request_id, AVG(r.value) 
