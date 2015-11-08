@@ -25,9 +25,9 @@ Finally, to check the currently set proxy;
 git config --global --get http.proxy
 git config --global --get https.proxy
 
----
+----------------------------------------
 Ignore file modification in local git repo
----
+----------------------------------------
 git update-index --assume-unchanged FILENAME	ON
 git update-index --no-assume-unchanged FILENAME	OFF
 
