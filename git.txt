@@ -1,6 +1,6 @@
 
 ----------------------------------------
-Getting git to work with a proxy server
+   Getting git to work with a proxy server
 ----------------------------------------
 
 Command to use :
@@ -26,13 +26,13 @@ git config --global --get http.proxy
 git config --global --get https.proxy
 
 ----------------------------------------
-Ignore file modification in local git repo
+   Ignore file modification in local git repo
 ----------------------------------------
 git update-index --assume-unchanged FILENAME	ON
 git update-index --no-assume-unchanged FILENAME	OFF
 
 ----------------------------------------
-Change commiter username etc
+   Change commiter username etc
 ----------------------------------------
 
 git config user.name 				- show current name for a specific repository
@@ -42,5 +42,16 @@ git config user.name "Vitaliy Timchenko" 	- set name for a specific repository
 git config user.email "example@email.com"	- set email for a specific repository
 
 git config --global user.name			- The same but for all the repos
+
+
+----------------------------------------
+   Update from alien project
+----------------------------------------
+
+git remote add upstream https://github.com/RoverWire/virtualhost.git
+git fetch upstream
+
+git pull upstream master
+git push origin master
 
 
