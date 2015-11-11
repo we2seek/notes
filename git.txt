@@ -25,9 +25,9 @@ Finally, to check the currently set proxy;
 git config --global --get http.proxy
 git config --global --get https.proxy
 
----
+----------------------------------------
 Ignore file modification in local git repo
----
+----------------------------------------
 git update-index --assume-unchanged FILENAME	ON
 git update-index --no-assume-unchanged FILENAME	OFF
 
@@ -42,5 +42,3 @@ git config user.name "Vitaliy Timchenko" 	- set name for a specific repository
 git config user.email "example@email.com"	- set email for a specific repository
 
 git config --global user.name			- The same but for all the repos
-
-
