@@ -43,7 +43,6 @@ git config user.email "example@email.com"	- set email for a specific repository
 
 git config --global user.name			- The same but for all the repos
 
-
 ----------------------------------------
    Update from alien project
 ----------------------------------------
@@ -53,5 +52,3 @@ git fetch upstream
 
 git pull upstream master
 git push origin master
-
-
