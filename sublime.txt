@@ -1,0 +1,2 @@
+CTRL + d					Rename variable
+CTRL + SHIFT + '		Rename HTML tag
