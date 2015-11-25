@@ -52,3 +52,11 @@ git fetch upstream
 
 git pull upstream master
 git push origin master
+
+
+
+----------------------------------------
+   Change remote server (HTTPS to SSH)
+----------------------------------------
+
+git remote set-url origin git@github.com:USERNAME/OTHERREPOSITORY.git
