@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS notes</title>
+    <style>
+        i {
+            background-color: greenyellow;
+            font-style: normal;
+        }
+        
+        code {
+            font: small normal "Droid Sans Mono", monospace;
+            white-space: pre;
+            margin: 1em 0 0 2em;
+            padding-left: 1em;
+            display: block;
+            border-left: 3px solid green;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>CSS Combinators</h1>
+    <p>A combinator is something that explains the relationship between the selectors.</p>
+    <p>There are four different combinatos in CSS3:</p>
+    <ul>
+        <li>Descendant selector (space)</li>
+        <li>Child selector (>)</li>
+        <li>Adjacent sibling selector (+)</li>
+        <li>General sibling selector (~)</li>
+    </ul>
+
+    <h2>Descendant selector (Нащадок &quot; &quot;)</h2>
+    <p>The descendant selector matches all elements that are descendants of a specified element.</p>
+    <p>The following example selects all &lt;p&gt; elements inside &lt;div&gt; elements:</p>
+    <code>div p { background-color: greenyellow; }</code>
+    <code>&lt;div&gt;
+    &lt;p&gt;<i>Paragraph 1 in the div.</i>&lt;/p&gt;
+    &lt;p&gt;<i>Paragraph 2 in the div.</i>&lt;/p&gt;
+    &lt;span&gt;&lt;p&gt;<i>Paragraph 3 in the div.</i>&lt;/p&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;p&gt;Paragraph 4. Not in a div.&lt;/p&gt; 
+&lt;p&gt;Paragraph 5. Not in a div.&lt;/p&gt;</code>
+
+    <h2>Child Selector (Дочірній &quot; &gt; &quot;)</h2>
+    <p>The child selector selects all elements that are the immediate children of a specified element.</p>
+    <p>The following example selects all &lt;p&gt; elements that are immediate children of a &lt;div&gt; element:</p>
+    <code>div &gt; p { background-color: greenyellow; }</code>
+    <code>&lt;div&gt; 
+    &lt;p&gt;<i>Paragraph 1 in the div.</i>&lt;/p&gt; 
+    &lt;p&gt;<i>Paragraph 2 in the div.</i>&lt;/p&gt; 
+    &lt;span&gt;&lt;p&gt;Paragraph 3 in the div.&lt;/p&gt;&lt;/span&gt; 
+&lt;/div&gt; 
+&lt;p&gt;Paragraph 4. Not in a div.&lt;/p&gt; 
+&lt;p&gt;Paragraph 5. Not in a div.&lt;/p&gt;</code>
+
+    <h2>Adjacent Sibling Selector (Сусідній брат &quot; + &quot;)</h2>
+    <p>The adjacent sibling selector selects all elements that are the adjacent siblings of a specified element.</p>
+    <p>Sibling elements must have the same parent element, and &quot;adjacent&quot; means &quot;immediately following&quot;.</p>
+    <p>The following example selects all &lt;p&gt; elements that are placed immediately after &lt;div&gt; elements:</p>
+    <code>div + p { background-color: greenyellow; }</code>
+    <code>&lt;div&gt; 
+    &lt;p&gt;Paragraph 1 in the div.&lt;/p&gt; 
+    &lt;p&gt;Paragraph 2 in the div.&lt;/p&gt; 
+    &lt;span&gt;&lt;p&gt;Paragraph 3 in the div.&lt;/p&gt;&lt;/span&gt; 
+&lt;/div&gt; 
+&lt;p&gt;<i>Paragraph 4. Not in a div.</i>&lt;/p&gt; 
+&lt;p&gt;Paragraph 5. Not in a div.&lt;/p&gt;</code>
+
+    <h2>General Sibling Selector (Всі брати &quot; ~ &quot;)</h2>
+    <p>The general sibling selector selects all elements that are siblings of a specified element.</p>
+    <p>The following example selects all &lt;p&gt; elements that are siblings of &lt;div&gt; elements: </p>
+    <code>div ~ p { background-color: greenyellow; }</code>
+    <code>&lt;div&gt; 
+    &lt;p&gt;Paragraph 1 in the div.&lt;/p&gt; 
+    &lt;p&gt;Paragraph 2 in the div.&lt;/p&gt; 
+    &lt;span&gt;&lt;p&gt;Paragraph 3 in the div.&lt;/p&gt;&lt;/span&gt; 
+&lt;/div&gt; 
+&lt;p&gt;<i>Paragraph 4. Not in a div.</i>&lt;/p&gt; 
+&lt;p&gt;<i>Paragraph 5. Not in a div.</i>&lt;/p&gt;</code>
+
+</body>
+
+</html>
