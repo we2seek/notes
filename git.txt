@@ -60,3 +60,17 @@ git push origin master
 ----------------------------------------
 
 git remote set-url origin git@github.com:USERNAME/OTHERREPOSITORY.git
+
+
+----------------------------------------
+   View file diff before commit
+----------------------------------------
+
+To see what you haven't git added yet:
+   git diff -- myfile.txt
+
+To see already-added changes
+   git diff --cached myfile.txt
+
+All the changes (staged or not staged) will be shown.
+   git diff HEAD file
