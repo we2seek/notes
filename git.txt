@@ -74,3 +74,8 @@ To see already-added changes
 
 All the changes (staged or not staged) will be shown.
    git diff HEAD file
+
+
+
+Delete remote branch
+   git push origin --delete <branchName>
