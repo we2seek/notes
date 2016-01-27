@@ -79,3 +79,12 @@ All the changes (staged or not staged) will be shown.
 
 Delete remote branch
    git push origin --delete <branchName>
+
+
+
+Undo last commit 
+   git reset --soft HEAD^
+
+
+Revert uncommitted changes to file
+   git checkout filename
