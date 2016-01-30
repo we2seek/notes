@@ -1,11 +1,22 @@
+##################################################
 # Сжать папку и разбить архив через 7z
 	7z a -tzip -v1m -mx9 result.zip source_folder/
+	a      - add
+	-tzip  - zip type
+	-v1m   - split to parts of 1 mb
+	-mx9   - compression level
 
+# 7z compression offers greater compression, but 
+# does not preserve file ownership, permissions, etc. 
+##################################################
+# Положить в архив с сохранением прав доступа к файлам
+tar cpvf backup.tar folder
 
-# Как разбить tar.zg архив на тома и как его потом склеить. Рекомендуется использовать tar, а не 7z, который проще, т.к. 7z не сохраняет права доступа к файлам
+# Положить в архив с сохранением прав доступа к файлам И СЖАТЬ
+tar cpvzf backup.tar.gz folder
 
 # Сжать и разбить:
-	tar czf - ./backup | split -d -b 10m - backup.tar.gz.
+	tar cpvzf - ./backup | split -d -b 10m - backup.tar.gz.
 
 # Склеить и распаковать:
-	cat backup.tar* | tar xzf -
+	cat backup.tar* | tar xpzf -
