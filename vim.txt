@@ -299,3 +299,22 @@ SYSTEM CLIPBOARD
 
 *dd or 1G"*yG - copy things into the * register and "*p to paste text from it. 
 :%y * will accomplish the same goal as gg"*yG
+
+
+
+
+DELETE EVERY SECOND ROW
+
+aaa    aaa
+vvv => bbb
+bbb    ccc
+vvv
+ccc
+vvv
+
+Command: :g/^/+d
+Description: An elegant (and efficient) way to accomplish the task is to issue the :+delete command removing the line next to the current one, on every line using the :global command.
+
+JOIN LINES
+
+Command: J
