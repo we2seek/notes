@@ -88,3 +88,42 @@ Undo last commit
 
 Revert uncommitted changes to file
    git checkout filename
+
+
+----------------------------------------
+   Switch between different github 
+   accouns with the same workstation
+----------------------------------------
+
+1. Create a new SSH key
+   BE CAREFUL! Do not overwrite existing key! 
+   When prompted, save the file with another name, 
+   such as "~/.ssh/id_rsa_NEW_ACCOUNT_NAME"
+      
+   ssh-keygen -t rsa C "your-email-address"
+
+2. Attach the new key from "~/.ssh/id_rsa_NEW_ACCOUNT_NAME.pub" on the github.com
+
+3. Next, because we saved our key with a unique name, we need to tell SSH about it. 
+   
+   ssh-add ~/.ssh/id_rsa_NEW_ACCOUNT_NAME
+   
+   If successful, you'll see a response of "Identity Added."
+
+4. Create a config file for SSH
+
+   vim ~/.ssh/config
+   
+   ------
+   # Default github
+   Host github.com
+      HostName github.com
+      User git
+      IdentityFile ~/.ssh/id_rsa
+
+   # New user's account
+   Host gihub-NEW_ACCOUNT_NAME
+      HostName github.com
+      User git
+      IdentityFile ~/.ssh/id_rsa_NEW_ACCOUNT_NAME
+   ------
