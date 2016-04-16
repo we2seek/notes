@@ -127,3 +127,15 @@ Revert uncommitted changes to file
       User git
       IdentityFile ~/.ssh/id_rsa_NEW_ACCOUNT_NAME
    ------
+
+
+5. Try it on
+
+   git init
+   git config user.name "Onotolle"
+   git config user.email "your-email"
+
+   git commit -am "initial commit"
+
+   git remote add origin git@github-NEW_ACCOUNT_NAME:Account/test.git
+   git push origin master
