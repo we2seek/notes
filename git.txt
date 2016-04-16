@@ -122,7 +122,7 @@ Revert uncommitted changes to file
       IdentityFile ~/.ssh/id_rsa
 
    # New user's account
-   Host gihub-NEW_ACCOUNT_NAME
+   Host github-NEW_ACCOUNT_NAME
       HostName github.com
       User git
       IdentityFile ~/.ssh/id_rsa_NEW_ACCOUNT_NAME
