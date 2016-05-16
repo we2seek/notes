@@ -1,2 +1,12 @@
-CTRL + d					Rename variable
+CTRL + d				Rename variable
 CTRL + SHIFT + '		Rename HTML tag
+
+# Custom config file
+/home/well/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap
+
+###
+[
+	{ "keys": ["ctrl+alt+r"], "command": "reindent" },
+	{ "keys": ["ctrl+alt+h"], "command": "toggle_side_bar" },
+]
+###
