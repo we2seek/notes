@@ -33,4 +33,9 @@ tar cpvzf backup.tar.gz folder
     zip -F backup.zip --output big_archive.zip
     mkdir output_folder
     unzip -d output_folder big_archive.zip
-    
+
+# Так же можно добавить md5 к частям архива. 
+# При возникновении проблем при разархивировании полезно проверить
+# контрольную сумму частей архива, чтобы понимать в чем дело
+    md5sum backup.* >> md5.txt    # Создаем файл с контрольными суммами
+    md5sum --check md5.txt        # Проверка (может занять некоторое ощутимое время)
