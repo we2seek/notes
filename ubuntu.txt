@@ -21,10 +21,16 @@ tar cpvzf backup.tar.gz folder
 # Склеить и распаковать:
 	cat backup.tar* | tar xpzf -
 ##################################################
-# Положить в архив с сохранением прав доступа к файлам
-
-
-
 # Scan LAN
     nmap -sP 192.168.1.0/24
 
+##################################################
+# Еще один способ разбить файлы на архивы
+# получаться файлы backup.zXX и backup.zip
+    zip -s 2g -r -1 backup backup-all
+
+# Склеить и разархивировать: (backup.zip последний файл в наборе)
+    zip -F backup.zip --output big_archive.zip
+    mkdir output_folder
+    unzip -d output_folder big_archive.zip
+    
