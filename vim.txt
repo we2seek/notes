@@ -318,3 +318,11 @@ Description: An elegant (and efficient) way to accomplish the task is to issue t
 JOIN LINES
 
 Command: J
+
+
+::: INSERT TEXT AT BEGINNING OF MULTI-LINE SELECTION :::
+    1. Use CTRL-v to enter visual block mode
+    2. Move Up/Down to select the columns if text in lines you want to comment
+    3. Hit SHIFT-i and type text you want to insert
+    4. Then hit ESC, wait 1 second and the inserted text will appear in every line.
+
