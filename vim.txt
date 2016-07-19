@@ -295,12 +295,11 @@ ctrl-w= — Подогнать окна по размеру
 :only — Закрыть все окна, кроме текущего
 :b 2 — Открыть #2 в текущем окне
 
+
 SYSTEM CLIPBOARD
 
 *dd or 1G"*yG - copy things into the * register and "*p to paste text from it. 
 :%y * will accomplish the same goal as gg"*yG
-
-
 
 
 DELETE EVERY SECOND ROW
@@ -315,6 +314,24 @@ vvv
 Command: :g/^/+d
 Description: An elegant (and efficient) way to accomplish the task is to issue the :+delete command removing the line next to the current one, on every line using the :global command.
 
+
 JOIN LINES
 
 Command: J
+
+
+SHOW WHITESPACES, TABS ETC
+    
+    Enable
+    :set list
+    
+    Disable
+    :set nolist
+
+    :help listchars
+
+    Example
+    :set listchars=eol:¶,tab:>-,trail:·,extends:>,precedes:<,nbsp:˽
+    
+    Note: To input unicode char type CTRL+SHIFT+u+XXXX
+    Example: ¶ = CTRL+SHIFT+u+00b6
