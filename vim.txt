@@ -254,6 +254,7 @@ ggVGg? — Преобразовать текст в Rot13
 
 /door — Искать слово “door” сверху вниз
 ?door — Искать слово “door” снизу вверх
+/\cdoor — Искать слово “door” без учета регистра
 /jo[ha]n> — Искать “john” или “joan”
 /\< the — Искать слова, начинающееся на “the” /the\> — Искать слова, заканчивающиеся на “the”
 /\< door\> — Искать “door”
@@ -335,3 +336,10 @@ SHOW WHITESPACES, TABS ETC
     
     Note: To input unicode char type CTRL+SHIFT+u+XXXX
     Example: ¶ = CTRL+SHIFT+u+00b6
+
+COMENT / UNCOMMENT LINES
+    Comment (Insert symbol at the first pos)
+    1) Goto 1 character at the line
+    2) ctrl-v (block selection)
+    3) select block (arrow down)
+    4) shift-I-#-Esc and wait 1 sec
