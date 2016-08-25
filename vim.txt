@@ -164,16 +164,6 @@ Manipulating the filesystem
 	10isome text<esc><esc> 	- Insert "some text" 10 times
 
 
-
-
-
-
-
-
-
-
-
-
 НАВИГАЦИЯ ПО ФАЙЛУ В VIM
 
 i — перейти в режим ввода с текущей позиции
