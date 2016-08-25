@@ -1,0 +1,6 @@
+[COMPILE]
+    javac -d bin src/main/com/we2seek/test/App.java
+
+[RUN]
+    java -cp bin com.we2seek.test.App
+

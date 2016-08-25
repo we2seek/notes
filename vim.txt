@@ -254,6 +254,7 @@ ggVGg? — Преобразовать текст в Rot13
 
 /door — Искать слово “door” сверху вниз
 ?door — Искать слово “door” снизу вверх
+/\cdoor — Искать слово “door” без учета регистра
 /jo[ha]n> — Искать “john” или “joan”
 /\< the — Искать слова, начинающееся на “the” /the\> — Искать слова, заканчивающиеся на “the”
 /\< door\> — Искать “door”
@@ -295,12 +296,12 @@ ctrl-w= — Подогнать окна по размеру
 :only — Закрыть все окна, кроме текущего
 :b 2 — Открыть #2 в текущем окне
 
+
+SYSTEM CLIPBOARD
 SYSTEM CLIPBOARD
 
 *dd or 1G"*yG - copy things into the * register and "*p to paste text from it. 
 :%y * will accomplish the same goal as gg"*yG
-
-
 
 
 DELETE EVERY SECOND ROW
@@ -315,14 +316,43 @@ vvv
 Command: :g/^/+d
 Description: An elegant (and efficient) way to accomplish the task is to issue the :+delete command removing the line next to the current one, on every line using the :global command.
 
+
 JOIN LINES
 
 Command: J
 
 
+
 ::: INSERT TEXT AT BEGINNING OF MULTI-LINE SELECTION :::
+
     1. Use CTRL-v to enter visual block mode
     2. Move Up/Down to select the columns if text in lines you want to comment
     3. Hit SHIFT-i and type text you want to insert
     4. Then hit ESC, wait 1 second and the inserted text will appear in every line.
 
+
+
+::: SHOW WHITESPACES, TABS ETC :::
+    
+    Enable
+    :set list
+    
+    Disable
+    :set nolist
+
+    :help listchars
+
+    Example
+    :set listchars=eol:¶,tab:>-,trail:·,extends:>,precedes:<,nbsp:˽
+    
+    Note: To input unicode char type CTRL+SHIFT+u+XXXX
+    Example: ¶ = CTRL+SHIFT+u+00b6
+
+
+
+::: COMENT / UNCOMMENT LINES :::
+    Comment (Insert symbol at the first pos)
+    1) Goto 1 character at the line
+    2) ctrl-v (block selection)
+    3) select block (arrow down)
+    4) shift-I-#-Esc and wait 1 sec

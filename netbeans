@@ -1,0 +1,38 @@
+(To insert unicode dash type: Ctrl+Shift+u+2014: —)
+
+Ctrl+;          — Semicolon at the end of the line
+Ctrl+Shift+;    — Semicolon at the end of the line + goto new line
+
+Alt+Shift+.     — Select text block
+Alt+Shift+,     — De-select text block
+
+Ctrl+u+u        — Change selected text to uppercase
+Ctrl+u+l        — Change selected text to lowercase
+Ctrl+u+l        — Switch case
+
+Ctrl+Shift+↑    — Duplicate line UP
+Ctrl+Shift+↓    — Duplicate line DOWN
+
+Ctrl+Space      — Autocomplete
+Ctrl+p          — Arguments
+Ctrl+Shift+Space — Documentation
+
+Ctrl+g          — GOTO line number
+Ctrl+e          — Delete current line or selected block 
+Ctrl+e          — GOTO Last edit
+
+Ctrl+Shift+v    — Formatted code insertion 
+Alt+Shift+j     — Select identifier 
+
+Shift+Enter     — Same as press End and then Enter
+
+Ctrl+0          — Code editor 
+Ctrl+1          — Projects
+Ctrl+7          — Navigator
+
+
+Alt+Shift+o     — Find file by name
+Ctrl+o          — Find file by class 
+
+Alt+Ins         — Code generation
+
