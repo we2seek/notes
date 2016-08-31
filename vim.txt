@@ -164,16 +164,6 @@ Manipulating the filesystem
 	10isome text<esc><esc> 	- Insert "some text" 10 times
 
 
-
-
-
-
-
-
-
-
-
-
 НАВИГАЦИЯ ПО ФАЙЛУ В VIM
 
 i — перейти в режим ввода с текущей позиции
@@ -298,6 +288,7 @@ ctrl-w= — Подогнать окна по размеру
 
 
 SYSTEM CLIPBOARD
+SYSTEM CLIPBOARD
 
 *dd or 1G"*yG - copy things into the * register and "*p to paste text from it. 
 :%y * will accomplish the same goal as gg"*yG
@@ -321,7 +312,17 @@ JOIN LINES
 Command: J
 
 
-SHOW WHITESPACES, TABS ETC
+
+::: INSERT TEXT AT BEGINNING OF MULTI-LINE SELECTION :::
+
+    1. Use CTRL-v to enter visual block mode
+    2. Move Up/Down to select the columns if text in lines you want to comment
+    3. Hit SHIFT-i and type text you want to insert
+    4. Then hit ESC, wait 1 second and the inserted text will appear in every line.
+
+
+
+::: SHOW WHITESPACES, TABS ETC :::
     
     Enable
     :set list
@@ -337,7 +338,9 @@ SHOW WHITESPACES, TABS ETC
     Note: To input unicode char type CTRL+SHIFT+u+XXXX
     Example: ¶ = CTRL+SHIFT+u+00b6
 
-COMENT / UNCOMMENT LINES
+
+
+::: COMENT / UNCOMMENT LINES :::
     Comment (Insert symbol at the first pos)
     1) Goto 1 character at the line
     2) ctrl-v (block selection)
