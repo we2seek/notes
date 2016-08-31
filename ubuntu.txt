@@ -39,3 +39,13 @@ tar cpvzf backup.tar.gz folder
 # контрольную сумму частей архива, чтобы понимать в чем дело
     md5sum backup.* >> md5.txt    # Создаем файл с контрольными суммами
     md5sum --check md5.txt        # Проверка (может занять некоторое ощутимое время)
+
+##################################################
+    Поиск текста в файле
+##################################################
+
+> grep -nr /path/where/to/search -e "what*search*expression"
+    or
+> grep -nr "what*search*expression" /path/where/to/search
+
+
