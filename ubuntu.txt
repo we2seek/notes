@@ -1,10 +1,10 @@
 ##################################################
 # Сжать папку и разбить архив через 7z
-	7z a -tzip -v1m -mx9 result.zip source_folder/
-	a      - add
-	-tzip  - zip type
-	-v1m   - split to parts of 1 mb
-	-mx9   - compression level
+    7z a -tzip -v1m -mx9 result.zip source_folder/
+    a      — add
+    -tzip  — zip type
+    -v1m   — split to parts of 1 mb
+    -mx9   — compression level
 
 # 7z compression offers greater compression, but 
 # does not preserve file ownership, permissions, etc. 
@@ -16,10 +16,10 @@ tar cpvf backup.tar folder
 tar cpvzf backup.tar.gz folder
 
 # Сжать и разбить:
-	tar cpvzf - ./backup | split -d -b 10m - backup.tar.gz.
+    tar cpvzf - ./backup | split -d -b 10m - backup.tar.gz.
 
 # Склеить и распаковать:
-	cat backup.tar* | tar xpzf -
+    cat backup.tar* | tar xpzf -
 ##################################################
 # Scan LAN
     nmap -sP 192.168.1.0/24
@@ -49,3 +49,43 @@ tar cpvzf backup.tar.gz folder
 > grep -nr "what*search*expression" /path/where/to/search
 
 
+##################################################
+    Pipeline stdout & stderr
+##################################################
+>  file redirects stdout to file
+1> file redirects stdout to file
+2> file redirects stderr to file
+&> file redirects stdout and stderr to file
+
+
+
+##################################################
+    Top
+##################################################
+    M — Sort by MEMORY usage
+    P — Sort by CPU usage
+    N — Sort by PROCESS ID
+    T — Sort by RUNNING TIME 
+    
+    R — Reverse the sorting order
+    x — Highlight the sorted column with bold text
+    b — Highlight sorted column background color
+    d — Change the update delay
+    
+    l — hide the load average information.
+    m — hide the memory information.
+    t — hide the task and cpu information.
+    
+    n — Change the number of processes to display
+    1 — Display all CPU cores
+
+    f — Show/Hide columns 
+
+    FILTER
+    Press the 'o' or 'O' to activate filter prompt. Then enter a filter like this and hit Enter:
+        COMMAND=apache
+    Now top will show only those processes whose COMMAND field contains the value apache. Here is another filter example that shows processes consuming CPU actively:
+        %CPU>0.0
+    See active filters — Press Ctrl+o to see currently active filters
+    Clear filter — Press '=' key to clear any active filters
+    
