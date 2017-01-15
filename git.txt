@@ -139,3 +139,10 @@ Revert uncommitted changes to file
 
    git remote add origin git@github-NEW_ACCOUNT_NAME:Account/test.git
    git push origin master
+
+
+
+----------------------------------------
+   Change last commit
+----------------------------------------
+https://githowto.com/ru/amending_commits
