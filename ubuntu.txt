@@ -1,10 +1,10 @@
 ##################################################
 # Сжать папку и разбить архив через 7z
-	7z a -tzip -v1m -mx9 result.zip source_folder/
-	a      - add
-	-tzip  - zip type
-	-v1m   - split to parts of 1 mb
-	-mx9   - compression level
+    7z a -tzip -v1m -mx9 result.zip source_folder/
+    a      - add
+    -tzip  - zip type
+    -v1m   - split to parts of 1 mb
+    -mx9   - compression level
 
 # 7z compression offers greater compression, but 
 # does not preserve file ownership, permissions, etc. 
@@ -16,10 +16,10 @@ tar cpvf backup.tar folder
 tar cpvzf backup.tar.gz folder
 
 # Сжать и разбить:
-	tar cpvzf - ./backup | split -d -b 10m - backup.tar.gz.
+    tar cpvzf - ./backup | split -d -b 10m - backup.tar.gz.
 
 # Склеить и распаковать:
-	cat backup.tar* | tar xpzf -
+    cat backup.tar* | tar xpzf -
 ##################################################
 # Scan LAN
     nmap -sP 192.168.1.0/24
@@ -39,3 +39,34 @@ tar cpvzf backup.tar.gz folder
 # контрольную сумму частей архива, чтобы понимать в чем дело
     md5sum backup.* >> md5.txt    # Создаем файл с контрольными суммами
     md5sum --check md5.txt        # Проверка (может занять некоторое ощутимое время)
+
+
+
+##################################################
+    uname — Информация о системе
+    df (disk free) — информация о диске
+    df -i — посмотреть инфо об inode
+    free — показывает информацию об использовании памяти и swap
+    w/who — инфо кто работает в системе и что делает
+    which — поиск команды
+
+        /dev/null — черная дыра
+        /dev/zero — источник нулей
+        /dev/random, /dev/urandom — источник случайных данных
+
+    ^z — увести текущую программу в фон
+    bg — продолжить её выполнение
+
+    jobs — посмотреть список фоновых задач
+    fg N — достать задачу номер N
+
+    find — поиск файлов/каталогов
+        -name — фильтр по имени
+        -type — указать тип объекта: d — directory, f — file
+
+    $ find . -name "*.gz" -exec echo "file {} found" \;
+
+    cd - — вернуться в предыдущую директорию
+
+
+
