@@ -1,4 +1,12 @@
 http://klimer.eu/2015/05/01/use-midnight-commander-like-a-pro/
 
-WTF?
+----------------------------------------
+    How to make Midnight Commander exit to its current directory
+----------------------------------------
+    alias mc=". /usr/share/mc/bin/mc-wrapper.sh"
 
+
+----------------------------------------
+    Keyb arrow LEFT: one level up
+----------------------------------------
+    Options -> Panel-Options and tick the "Lynx-like motion"
