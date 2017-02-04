@@ -119,3 +119,15 @@ tar cpvzf backup.tar.gz folder
         %CPU>0.0
     See active filters — Press Ctrl+o to see currently active filters
     Clear filter — Press '=' key to clear any active filters
+
+
+##################################################
+    Remove terminal border for multi-tab
+##################################################
+    
+Edit /usr/share/themes/Ambiance/gtk-3.0/apps/gnome-terminal.css and add:
+
+    TerminalWindow .notebook {
+        padding: 0;
+        border-width: 0;
+    }
