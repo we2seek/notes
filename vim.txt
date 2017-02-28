@@ -346,3 +346,13 @@ Command: J
     2) ctrl-v (block selection)
     3) select block (arrow down)
     4) shift-I-#-Esc and wait 1 sec
+
+
+
+::: CHANGE TEXT BETWEEN HTML TAGS 
+
+    cit — replace between tags
+    ci[, ci{, or ci( — replace between mathed square or curly brackets, or parentheses.
+    ci], ci}, or ci) — the same but w closing character
+
+
