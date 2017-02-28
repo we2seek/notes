@@ -160,7 +160,7 @@ Manipulating the filesystem
     D                   - delete the file/directory under the cursor
 
 
-::: Other :::
+::: INSERT :::
     10isome text<esc><esc>  - Insert "some text" 10 times
 
 
