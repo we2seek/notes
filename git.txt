@@ -28,20 +28,20 @@ git config --global --get https.proxy
 ----------------------------------------
    Ignore file modification in local git repo
 ----------------------------------------
-git update-index --assume-unchanged FILENAME	ON
-git update-index --no-assume-unchanged FILENAME	OFF
+git update-index --assume-unchanged FILENAME    ON
+git update-index --no-assume-unchanged FILENAME OFF
 
 ----------------------------------------
    Change commiter username etc
 ----------------------------------------
 
-git config user.name 				- show current name for a specific repository
-git config user.email 				- show current email for a specific repository
+git config user.name                - show current name for a specific repository
+git config user.email               - show current email for a specific repository
 
-git config user.name "Vitaliy Timchenko" 	- set name for a specific repository
-git config user.email "example@email.com"	- set email for a specific repository
+git config user.name "Vitaliy Timchenko"    - set name for a specific repository
+git config user.email "example@email.com"   - set email for a specific repository
 
-git config --global user.name			- The same but for all the repos
+git config --global user.name           - The same but for all the repos
 
 ----------------------------------------
    Update from alien project
@@ -146,3 +146,17 @@ Revert uncommitted changes to file
    Change last commit
 ----------------------------------------
 https://githowto.com/ru/amending_commits
+
+
+
+----------------------------------------
+   Rename branch
+----------------------------------------
+
+If you want to rename a branch while pointed to any branch, do:
+   git branch -m <oldname> <newname>
+
+If you want to rename the current branch, you can do:
+   git branch -m <newname>
+
+A way to remember this, is -m is for "move" (or mv), which is how you rename files.

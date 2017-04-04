@@ -1,0 +1,12 @@
+----------------------------------------
+    Detach from currenty attached 
+----------------------------------------
+
+session:
+    Ctrl + b d  or  Ctrl + b :detach
+
+screen:
+    Ctrl + a Ctrl + d   or  Ctrl + a :detach
+
+
+

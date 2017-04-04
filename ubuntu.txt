@@ -76,6 +76,7 @@ tar cpvzf backup.tar.gz folder
     Поиск текста в файле (grep)
 ##################################################
 
+grep 'what_to_search' /path/where/to/search
 grep -nr /path/where/to/search -e "what*search*expression"
 grep -nr "what*search*expression" /path/where/to/search
 
