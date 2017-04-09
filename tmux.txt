@@ -8,5 +8,12 @@ session:
 screen:
     Ctrl + a Ctrl + d   or  Ctrl + a :detach
 
+----------------------------------------
+    Swap panes horisontal <-> vertical
+----------------------------------------
 
+verical -> horizontal
+    Prefix meta-2
 
+horizontal -> verical 
+    Prefix meta-2
