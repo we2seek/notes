@@ -160,3 +160,30 @@ If you want to rename the current branch, you can do:
    git branch -m <newname>
 
 A way to remember this, is -m is for "move" (or mv), which is how you rename files.
+
+
+
+
+----------------------------------------
+   ~/.gitconfig
+----------------------------------------
+[core]
+    gitProxy="ssh" for "kernel.org"
+        gitProxy=default-proxy ; for the rest
+    autocrlf = input
+
+[http]
+    proxy = 
+[https]
+    proxy = 
+[user]
+    name = 
+    email = 
+[pull]
+    rebase = true
+[color]
+    ui = true
+[alias]
+    s = status -s
+    st = status
+    lg = log --oneline --decorate --graph -15
