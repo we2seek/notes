@@ -46,6 +46,7 @@ tar cpvzf backup.tar.gz folder
     uname — Информация о системе
     df (disk free) — информация о диске
     df -i — посмотреть инфо об inode
+    du -h folder_name — размер папки folder_name
     free — показывает информацию об использовании памяти и swap
     w/who — инфо кто работает в системе и что делает
     which — поиск команды
