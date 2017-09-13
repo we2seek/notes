@@ -232,3 +232,20 @@ CTRL-L — Очистка экрана терминала
 https://putty.org.ru/articles/netstat-linux-examples.html
 
 netstat -anp | grep 10.61.
+
+
+##################################################
+    openvpn
+##################################################
+(https://community.openvpn.net/openvpn/wiki/OpenvpnSoftwareRepos)
+    Notes on expired keys:
+If the apt signing key expires, apt will complain when refreshing the package cache (e.g. apt-get update). To fix this:
+
+1) remove the expired key from apt keychain:
+    sudo apt-key del E158C569
+
+2) Then add the new key using wget and apt-key:
+    wget -O - https://swupdate.openvpn.net/repos/repo-public.gpg | sudo apt-key add -
+
+3) Then verify that the new key is in the keychain:
+    sudo apt-key list
