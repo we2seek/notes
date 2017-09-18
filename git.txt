@@ -145,8 +145,7 @@ Revert uncommitted changes to file
 ----------------------------------------
    Change last commit
 ----------------------------------------
-https://githowto.com/ru/amending_commits
-
+https://githowto.com/uk/amending_commits
 
 
 ----------------------------------------
