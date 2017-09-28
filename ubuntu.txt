@@ -46,6 +46,16 @@ find . -type d -maxdepth 1 -mindepth 1 -exec tar cpvzf {}.tar.gz {} \;
     md5sum --check md5.txt        # Проверка (может занять некоторое ощутимое время)
 
 
+##################################################
+    Encrypt files (archives)
+##################################################
+Encrypt:
+    gpg -o fileToBeEncrypted.tar.gz.gpg --symmetric fileToBeEncrypted.tar.gz
+This will prompt you for a passphrase
+
+Decrypt:
+    gpg fileToBeEncrypted.tar.gz.gpg 
+This will prompt you for a passphrase again
 
 ##################################################
     uname — Информация о системе
@@ -249,3 +259,7 @@ If the apt signing key expires, apt will complain when refreshing the package ca
 
 3) Then verify that the new key is in the keychain:
     sudo apt-key list
+
+
+
+
