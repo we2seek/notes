@@ -10,3 +10,36 @@ http://klimer.eu/2015/05/01/use-midnight-commander-like-a-pro/
     Keyb arrow LEFT: one level up
 ----------------------------------------
     Options -> Panel-Options and tick the "Lynx-like motion"
+
+
+----------------------------------------
+    http://linuxcommand.org/lc3_adv_mc.php
+----------------------------------------
+    Ctrl-up or Ctrl-down — Traverse dialog history [^]
+
+    Alt-t    — Changing the listing format
+    Ctrl-x i — Display "Information mode"
+
+    Alt-o    — Select directory in the current panel and have its contents listed on the other panel
+    Alt-i    — Force the other panel to list the same directory as the current panel
+    Ctrl-x   — Quick view mode (Display file contents)
+    
+    Alt-H    — Directory history list
+    Alt-u    — Directory history forward
+    Alt-y    — Directory history backward
+    
+    ins      — Tag (select) file or directory
+    +        — Tag (select) group of files or directories
+    *        — Reverse selection
+    - or \   — Tag (select) group of files or directories
+
+    Ctrl-x l — Create a hard link, in the directory shown in the current panel
+    Ctrl-x s — Creates a symbolic link in the directory shown in the other panel, using an absolute directory path
+    Ctrl-x v — Creates a symbolic link in the directory shown in the other panel, using a relative path
+    Ctrl-x c — File permissions (modes, chmod)
+    Ctrl-x o — File owner (chown). Run as superuser
+
+    Alt-Enter — file name to command prompt
+    Ctrl-Shift-Enter — full path with file name to command prompt
+    
+    Alt-?    — Finding files
