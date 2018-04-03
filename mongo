@@ -1,0 +1,7 @@
+/*** Update every document on one field ***/
+db.getCollection('onModeration').updateMany({"requestStatus":"WORKING"}, {$set: {"requestStatus":"CHANGED"}})
+db.getCollection('onModeration').updateMany({"requestStatus": {$ne: "CHANGED"}}, {$set: {"requestStatus":"CHANGED"}})
+
+   onModeration                        — collection name
+   {"requestStatus":"WORKING"}         — is the condition (the empty condition {} matche any document)
+   {$set: {"requestStatus":"CHANGED"}} — is what you want to do

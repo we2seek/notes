@@ -4,3 +4,6 @@
 [RUN]
     java -cp bin com.we2seek.test.App
 
+[INSTALL]
+    sudo update-alternatives --install /usr/bin/java java /<path-to-your-java-dir>/jre/bin/java 1000
+    sudo update-alternatives --config java

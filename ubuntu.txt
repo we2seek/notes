@@ -266,3 +266,10 @@ If the apt signing key expires, apt will complain when refreshing the package ca
     copy file contents from remote machine over ssh
 ##################################################
 ssh -e none user@remote.ip "cat /path/to/file.xml" | xclip -selection clipboard
+
+
+
+##################################################
+    extract text between quotes 
+##################################################
+sed 's/.*"\(.*\)"[^"]*$/\1/'
