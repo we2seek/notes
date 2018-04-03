@@ -7,3 +7,8 @@
 [INSTALL]
     sudo update-alternatives --install /usr/bin/java java /<path-to-your-java-dir>/jre/bin/java 1000
     sudo update-alternatives --config java
+
+[INTELLIJ workaround for fonts on Linux]
+    https://gist.github.com/CrazyCoder/0d9e54f450000d3fb6edcbda6d9788be
+    
+    add -Djava2d.font.loadFontConf=false JVM option (Before project loading, Select "Configure" -> "Edit custom VM options")
