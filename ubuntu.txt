@@ -276,7 +276,6 @@ sed 's/.*"\(.*\)"[^"]*$/\1/'
 
 
 
-
 ##################################################
     multiline cat
 ##################################################
@@ -315,3 +314,7 @@ The b.txt file contains bar and baz lines. The same output is printed to stdout.
 
 
 
+##################################################
+    extract a predetermined range of lines from a text file
+##################################################
+sed -n '16224,16482p;16483q' filename > newfile
