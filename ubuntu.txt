@@ -318,3 +318,35 @@ The b.txt file contains bar and baz lines. The same output is printed to stdout.
     extract a predetermined range of lines from a text file
 ##################################################
 sed -n '16224,16482p;16483q' filename > newfile
+
+
+
+##################################################
+    extract object by field value from JSON (using jq)
+##################################################
+Assume we want to extract all objects where "id" == "city":
+{
+  "status": 0,
+  "data": [
+    {
+      "id": "city",
+      "name": {
+        "locales": [
+          {
+            "lang": "UA",
+            "value": "Місто"
+          },
+          {
+            "lang": "RU",
+            "value": "Город"
+          }
+        ]
+      },
+      "min": -1,
+      "max": -1,
+      "type": "CITY"
+    }
+  ]
+}
+
+jq '.data[] | select(.id == "city")'

@@ -1,19 +1,74 @@
+Prefix = Pr = Ctrl + b (by default)
+
+
+
+----------------------------------------
+    vim freezes inside tmux
+----------------------------------------
+Ctrl+s and then Ctrl+q
+
+
+
+----------------------------------------
+    Misc
+----------------------------------------
+tmux                            Start new
+tmux new -s myname              Start new with session name
+tmux a #                        Attach
+tmux a -t myname                Attach to named session
+tmux list                       List sessions
+tmux kill-session -t myname     Kill session by name
+
+In tmux hit the prefix (Pr) and then:
+:new                            New session
+s                               list
+$                               name session 
+
+d           detach
+t           big clock
+?           list shortcuts
+:           prompt
+
+
+
+----------------------------------------
+    WINDOWS
+----------------------------------------
+c           Create a new window
+,           Remane window
+p           Previous window
+n           Next window
+w           List windows
+&           Kill window
+
+:swap-window -s 3 -t 1          swap window #3 with #1
+:swap-window -t 0               swap current window with #0
+
+
+----------------------------------------
+    PANES
+----------------------------------------
+Split panes 
+%           vertical split
+"           horizontal split
+
+Swap panes
+meta-1      horizontal -> verical 
+meta-2      verical -> horizontal
+o           swap panes
+q           show pane numbers
+x           kill pane
+space       toggle between layouts
+
+
+
 ----------------------------------------
     Detach from currenty attached 
 ----------------------------------------
 
 session:
-    Ctrl + b d  or  Ctrl + b :detach
+    Pr + d  or  Pr :detach
 
 screen:
     Ctrl + a Ctrl + d   or  Ctrl + a :detach
 
-----------------------------------------
-    Swap panes horisontal <-> vertical
-----------------------------------------
-
-verical -> horizontal
-    Prefix meta-2
-
-horizontal -> verical 
-    Prefix meta-1
