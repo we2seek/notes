@@ -350,3 +350,17 @@ Assume we want to extract all objects where "id" == "city":
 }
 
 jq '.data[] | select(.id == "city")'
+
+
+
+##################################################
+--- Multiline editor in terminal
+##################################################
+https://stackoverflow.com/a/33059422
+
+If you press C-x C-e command that will open your default editor which defined .bashrc, 
+after that you can use all powerful features of your editor.
+When you save and exit, the lines will wait your enter.
+
+If you want to define your editor, just write for Ex. EDITOR=emacs -nw or EDITOR=vi inside of ~/.bashrc
+
