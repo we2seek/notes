@@ -354,7 +354,7 @@ jq '.data[] | select(.id == "city")'
 
 
 ##################################################
-Multiline editor in terminal
+   Multiline editor in terminal
 ##################################################
 https://stackoverflow.com/a/33059422
 
@@ -363,3 +363,18 @@ after that you can use all powerful features of your editor.
 When you save and exit, the lines will wait your enter.
 
 If you want to define your editor, just write for Ex. EDITOR=emacs -nw or EDITOR=vi inside of ~/.bashrc
+
+
+
+##################################################
+   Ubuntu workspaces
+##################################################
+https://help.ubuntu.com/stable/ubuntu-help/shell-workspaces-movewindow.html.en
+
+Switch between workspaces
+    Super + PgUp | Ctrl + Alt + Up      Move to upper workspace
+    Super + PgDp | Ctrl + Alt + Down    Move to downer workspace
+
+Move window to a different workspace
+    Super + Shift + PgUp                Move the window to a workspace UP of the current
+    Super + Shift + PgDp                Move the window to a workspace DOWN of the current
