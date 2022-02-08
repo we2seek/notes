@@ -378,3 +378,11 @@ Switch between workspaces
 Move window to a different workspace
     Super + Shift + PgUp                Move the window to a workspace UP of the current
     Super + Shift + PgDp                Move the window to a workspace DOWN of the current
+
+
+
+##################################################
+   test access to DB from your machine
+##################################################
+
+   nc -zv ip port
