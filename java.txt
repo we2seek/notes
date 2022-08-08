@@ -5,8 +5,14 @@
     java -cp bin com.we2seek.test.App
 
 [INSTALL]
-    sudo update-alternatives --install /usr/bin/java java /<path-to-your-java-dir>/jre/bin/java 1000
+    sudo update-alternatives --install /usr/bin/java java /<path-to-your-java-dir>/jre/bin/java 1100
+    sudo update-alternatives --install /usr/bin/javac java /<path-to-your-java-dir>/jre/bin/javac 1100
+    sudo update-alternatives --install /usr/bin/javaws java /<path-to-your-java-dir>/jre/bin/javaws 1100
+    sudo update-alternatives --install /usr/bin/jvisualvm java /<path-to-your-java-dir>/jre/bin/jvisualvm 1100
     sudo update-alternatives --config java
+    sudo update-alternatives --config javac
+    sudo update-alternatives --config javaws
+    sudo update-alternatives --config jvisualvm
 
 [INTELLIJ workaround for fonts on Linux]
     https://gist.github.com/CrazyCoder/0d9e54f450000d3fb6edcbda6d9788be
