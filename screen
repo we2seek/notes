@@ -1,6 +1,7 @@
 screen -S ONE           - start new session with name ONE
 screen -ls              - list sessions
 screen -r ONE           - attach to session with name ONE
+screen -dr ONE          - reattach a session with name ONE and if necessary detach it first
 screen -X -S 12108 quit - execute <cmd> as a screen command in the specified session
 ctrl a d                - detach from current screen session
 ctrl a k,/              - kill current window
