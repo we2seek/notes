@@ -43,3 +43,11 @@ http://klimer.eu/2015/05/01/use-midnight-commander-like-a-pro/
     Ctrl-Shift-Enter — full path with file name to command prompt
     
     Alt-?    — Finding files
+
+
+
+----------------------------------------
+   Context Menu (e.g. for gip/unzip) 
+----------------------------------------
+   Call context menu: F2
+       Select desired action
