@@ -1,6 +1,8 @@
 ::: INSERT :::
 o - start new line
 
+
+
 ::: MOVE :::
 
 w - forward one word (start word)
@@ -67,6 +69,7 @@ m[a-z] - set mark by single letter from a to z. Example: ma
     ]   End of the last change
 
 
+
 ::: HELP :::
 
 :vert help - open inner vim help in vertical window. You can also control whether the window splits on the top/left or on the right/bottom with "topleft" or "to" and "botright" or "bo". For example to open the help in the right window of a vertical split: 
@@ -76,67 +79,53 @@ m[a-z] - set mark by single letter from a to z. Example: ma
 
 ::: SPLIT  :::
 
-    CTRL-W and cursor - Jump between the windows
-    CTRL-W h    move to the window on the left
-    CTRL-W j    move to the window below
-    CTRL-W k    move to the window above
-    CTRL-W l    move to the window on the right
+To open vim with window for a each file splited horisontally use option "-o". The "-O" argument is used to get vertically split windows:
+
+vim -O one.txt two.txt three.txt
     
-    CTRL-W t    move to the TOP window
-    CTRL-W b    move to the BOTTOM window
+    ctrl-w left      - move cursor to widow on the left
+    ctrl-w down      - move cursor to widow on the down
+    ctrl-w up        - move cursor to widow on the up
+    ctrl-w right     - move cursor to widow on the right
     
-    CTRL-W K move window to the far TOP
-    CTRL-W H --- far LEFT
-    CTRL-W J --- BOTTOM
-    CTRL-W L --- far RIGHT
-
-:split - splits the screen into two windows and leaves the cursor in the top one
-:close - Close the window
-:only - Close all windows, except the current one
-:split two.txt - open second window with given file
-:new - open window on a new, empty file
-
-:vsplit or :vsplit two.txt - vertical split
-:vertical new   or   :vnew   - open vertically split window in a new empty file
-
-    vim -o one.txt two.txt three.txt - open vim with window for a each file splited horisontally. The "-O" argument is used to get vertically split windows.
-
-    :leftabove {cmd}    left or above the current window
-    :aboveleft {cmd}    idem
-    :rightbelow {cmd}   right or below the current window
-    :belowright {cmd}   idem
-    :topleft {cmd}      at the top or left of the Vim window
-    :botright {cmd}     at the bottom or right of the Vim window
-
-
-
-::: BUFFERS :::
+    ctrl-w h         - move cursor to widow on the left
+    ctrl-w j         - move cursor to widow on the down
+    ctrl-w k         - move cursor to widow on the up
+    ctrl-w l         - move cursor to widow on the right
     
-    :vert sb N - open left vertical split (by default) with buffer No. N
-    :vert belowright sb N - the same but right window with buffer
+    ctrl-w t         - move to the TOP window
+    ctrl-w b         - move to the BOTTOM window
+    
+    ctrl-w K         - move window to the far TOP
+    ctrl-w H         - move window to the far LEFT
+    ctrl-w J         - move window to the far BOTTOM
+    ctrl-w L         - move window to the far RIGHT
+    
+    ctrl-w K         - horisontal split
+    ctrl-w H         - vertical split
+    ctrl-w x         - swap windows    
+    ctrl-w r         - swap windows    
 
-::: MULTIPLE WINDOWS :::
-
-    :e filename      - edit another file
-    :split filename  - split window and load another file
-    ctrl-w up arrow  - move cursor up a window
     ctrl-ww          - move cursor to another window (cycle)
     ctrl-w_          - maximize current window
     ctrl-w=          - make all equal size
     10 ctrl-w+       - increase window size by 10 lines
     ctrl-w >         - increase window width
     ctrl-w <         - reduce window width
-    :vsplit file     - vertical split
-    :sview file      - same as split, but readonly
-    :hide            - close current window
-    :only            - keep only this window open
-    :ls              - show current buffers
-    :b 2             - open buffer #2 in this window
 
-    ctrl-w K (upper) - horisontal split
-    ctrl-w H (upper) - vertical split
-    ctrl-w x         - swap windows    
-    ctrl-w r         - swap windows    
+    :close           - close the window
+    :e filename      - edit another file
+    :hide            - close current window
+    :new             - open window on a new, empty file
+    :only            - close all windows, except the current one
+    :split filename  - split window and load another file
+    :sview file      - same as split, but readonly
+    :vnew            - open vertically split window in a new empty file
+    :vsplit file     - vertical split
+    :ls              - show current buffers
+    :b 2             - open buffer #2 in this window 
+    :vert sb N               - open left vertical split (by default) with buffer No. N
+    :vert belowright sb N    - the same but right window with buffer
 
 
 
@@ -272,23 +261,6 @@ ggguG — Перевести весь текст в нижний регистр
 :%s/.*/\l& — Перевести первую букву первого слова в каждой строке в нижний регистр
 
 
-РАЗДЕЛЕНИЕ ОКНА В VIM
-
-:e filename — Редактировать filename в текущем окне
-:split filename — Разделить окно и открыть filename
-ctrl-w + стрелка ВВЕРХ — Переместить курсор в верхнее окно
-ctrl-w ctrl-w — Переместить курсор в следующее окно
-ctrl-w_ — Максимизировать текущее окно
-ctrl-w= — Подогнать окна по размеру
-10 ctrl-w+ — Увеличить текущее окно на 10 строк
-:vsplit file — Вертикально разделить окно
-:sview file — Разделить окно и открыть file только для чтения
-:hide — Закрыть текущее окно
-:only — Закрыть все окна, кроме текущего
-:b 2 — Открыть #2 в текущем окне
-
-
-SYSTEM CLIPBOARD
 SYSTEM CLIPBOARD
 
 *dd or 1G"*yG - copy things into the * register and "*p to paste text from it. 
