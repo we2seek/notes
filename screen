@@ -18,3 +18,5 @@ ctrl a TAB              - switch between windows
 ctrl a X                - exit window
 ctrl a x                - lock current screen session
 ctrl a ?                - help
+
+ctrl a:resize -v (-h) +10    - resize current screen region vertically (horizontally) +10 units

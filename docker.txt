@@ -1,3 +1,115 @@
 Course link:
 https://www.udemy.com/course/docker-for-java-developers/learn/lecture/6659194#overview
 
+
+# Dockerfile example
+FROM node                       (base image)
+WORKDIR /app                    (where to copy all app files)
+COPY package.json /app          
+RUN npm install                 (RUN executes only once on build)
+                                (so placing this before COPY trick)
+                                (allows to use cached content by docker)
+                                (and do not copying node_modules every build)
+                                (if no changes in package.json happened)
+
+COPY . .                        (copy project files to image WORKDIR)
+ENV PORT 4200                   (pass environment variable to image)
+EXPOSE $PORT                    (expose port 4200)
+CMD ["node", "app.js"]          (unlike RUN this command runs every time when container starts)
+
+
+# create image
+docker build .
+docker build -t <IMAGE NAME> . (create with name)
+docker build -t <IMAGE NAME>:<TAG> . (create with name and tag)
+
+
+
+# list images
+docker images
+docker image ls
+
+
+
+# remove images
+docker rmi <IMAGE ID> [<ANOTHER IMAGE ID>]
+docker image prune
+
+
+
+# rename image
+docker tag <OLD NAME> <NEW NAME>
+
+
+
+# ignore files/folders on image build
+touch .dockerignore
+
+.dockerignore:
+.node_modules
+.git
+.idea
+Dockerfile
+
+
+
+# show image details
+docker image inspect <IMAGE ID/NAME>
+
+# run image as a new container
+docker run <REPOSITORY>
+docker run <IMAGE ID>
+docker run --help (more info)
+docker run -it node (interactive mode)
+docker run -p 80:3000 <IMAGE ID> (OUTER_PORT:CONTAINER_PORT)
+docker run -d -p 80:3000 <IMAGE ID> (detached)
+docker run -d -p 80:3000 --name <CONTAINER NAME> <IMAGE ID> (run with name)
+docker run -d -p 80:3000 --name <CONTAINER NAME> --rm <IMAGE ID> (auto rm container atfer stop)
+docker run -d -p 80:8800 --name <CONTAINER NAME> --rm -e PORT 8800 <IMAGE ID> (pass env variable)
+docker run -d -p 80:8800 --name <CONTAINER NAME> --rm --env-file ./config/.env <IMAGE ID> (pass env file)
+
+
+
+# run container
+docker start <CONTAINER ID/NAME> (start existing container in detached mode)
+
+
+
+# stop container
+docker stop <CONTAINER ID/NAME>
+
+
+
+# list containers
+docker ps
+docker ps -a (all containers)
+docker ps --help (more info)
+
+
+
+# remove container
+docker rm <CONTAINER ID> [<ANOTHER CONTAINER ID>]
+docker container prune
+
+
+
+# attach to running container
+docker attach <CONTAINER ID/NAME>
+
+
+
+# show container logs
+docker logs <CONTAINER ID/NAME>
+
+
+
+# convinient way - Makefile
+touch Makefile:
+run:
+   docker run -d -p 80:8800 --name <CONTAINER NAME> --rm --env-file ./config/.env <IMAGE ID>
+stop:
+   docker stop <CONTAINER ID/NAME>
+
+to use shortcuts:
+   make run
+   make stop
