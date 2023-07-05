@@ -6,7 +6,7 @@ screen -X -S 12108 quit - execute <cmd> as a screen command in the specified ses
 ctrl a d                - detach from current screen session
 ctrl a k,/              - kill current window
 ctrl a c                - create a new window
-ctrl a n,p              - switch to next, previous window
+ctrl a n,p              - switch to NEXT, previous WINDOW
 ctrl a 0-9              - switch to window #0-9
 
 ctrl a w                - list window names
