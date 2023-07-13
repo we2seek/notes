@@ -404,3 +404,29 @@ add N days to certain date
 ##################################################
 
 netstat -tulpn | grep LISTEN | awk '{print $4}' | awk -F: '{print $NF}' | sort -g | uniq
+
+
+
+##################################################
+   scp with RSA-key
+##################################################
+
+1. На локальній тачці тимчасово дозволяєш логін за паролем
+sudo vim /etc/ssh/sshd_config
+
+PasswordAuthentication yes
+
+2. Рестарт sshd
+sudo service sshd restart
+
+3. На віддаленій тачці генеруєш собі новий ключик, обережно, щоб не перетерти людям дефолтний. 
+ssh-keygen -b 4096 -t rsa
+
+4. Далі потрібно цей ключик *.pub покласти на твою тачку
+ssh-copy-id -p100500 -i /path/to/id_rsa.pub LDAP@YOUR_IP
+
+5. Прикриваємо на локальній тачці логін по паролю + рестарт сервісу sshd як у п.2
+
+sudo vim /etc/ssh/sshd_config
+
+PasswordAuthentication no
