@@ -15,7 +15,7 @@ ctrl a A                - set window title
 
 ctrl a |,S              - split vertically, horisontally
 ctrl a TAB              - switch between windows
-ctrl a X                - exit window
+ctrl a X                - remove current region
 ctrl a x                - lock current screen session
 ctrl a ?                - help
 

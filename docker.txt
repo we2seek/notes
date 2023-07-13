@@ -68,6 +68,11 @@ docker run -d -p 80:3000 --name <CONTAINER NAME> --rm <IMAGE ID> (auto rm contai
 docker run -d -p 80:8800 --name <CONTAINER NAME> --rm -e PORT 8800 <IMAGE ID> (pass env variable)
 docker run -d -p 80:8800 --name <CONTAINER NAME> --rm --env-file ./config/.env <IMAGE ID> (pass env file)
 
+# run image as a new container w/ external storage for mongodb
+docker run -p 27017:27017 -d --name mng -v /home/well/dockerdata/mongo:/data/db mongo 
+
+# run rabbitmq
+docker run -d --hostname guru-rabbit --name some-rabbit -p 8080:15672 -p 5671:5671 -p 5672:5672 rabbitmq:3-management --rm
 
 
 # run container
