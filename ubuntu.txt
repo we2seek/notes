@@ -430,3 +430,20 @@ ssh-copy-id -p100500 -i /path/to/id_rsa.pub LDAP@YOUR_IP
 sudo vim /etc/ssh/sshd_config
 
 PasswordAuthentication no
+
+
+
+
+##################################################
+   Find non-ascii symbols
+##################################################
+   
+   grep --color='auto' -P -n "[\x80-\xFF]" sample.txt
+      or
+   grep --color='auto' -P -n "[^\x00-\x7F]" sample.txt  (this worked for me on my Ubuntu)
+      or
+   grep --color='auto' -n "[^[:ascii:]]" sample.txt
+
+Source: https://www.baeldung.com/linux/find-non-ascii-chars
+
+   
