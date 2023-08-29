@@ -1,0 +1,11 @@
+##################################################
+   extract xml attribute values
+##################################################
+
+From log file like:
+31.03.2022 22:27:57_693	10.62.130.48:<?xml version="1.0" encoding="UTF-8" standalone="yes"?><mes type="byBpl"><percent repNd="ROHPGK0040300014" repId="42942163" repDateStart="11.10.2019" repYear="2021"/></mes>
+31.03.2022 22:28:15_56	10.62.130.48:<?xml version="1.0" encoding="UTF-8" standalone="yes"?><mes type="byBpl"><percent repNd="ROHPGK0040300014" repId="42942163" repDateStart="11.10.2019" repYear="2021"/></mes>
+31.03.2022 22:32:38_554	10.62.130.48:<?xml version="1.0" encoding="UTF-8" standalone="yes"?><mes type="byBpl"><percent repNd="ROHPGK0040300014" repId="42942163" repDateStart="11.10.2019" repYear="2021"/></mes>
+
+extract just attributes values in percent tag:
+	grep -oP 'repNd="([^"]*)" repId="([^"]*)" repDateStart="([^"]*)" repYear="([^"]*)"' inputXml.log | sed -E 's/repNd="([^"]*)" repId="([^"]*)" repDateStart="([^"]*)" repYear="([^"]*)"/\1;\2;\3;\4/'
