@@ -322,38 +322,6 @@ sed -n '16224,16482p;16483q' filename > newfile
 
 
 ##################################################
-    extract object by field value from JSON (using jq)
-##################################################
-Assume we want to extract all objects where "id" == "city":
-{
-  "status": 0,
-  "data": [
-    {
-      "id": "city",
-      "name": {
-        "locales": [
-          {
-            "lang": "UA",
-            "value": "Місто"
-          },
-          {
-            "lang": "RU",
-            "value": "Город"
-          }
-        ]
-      },
-      "min": -1,
-      "max": -1,
-      "type": "CITY"
-    }
-  ]
-}
-
-jq '.data[] | select(.id == "city")'
-
-
-
-##################################################
    Multiline editor in terminal
 ##################################################
 https://stackoverflow.com/a/33059422
@@ -446,4 +414,36 @@ PasswordAuthentication no
 
 Source: https://www.baeldung.com/linux/find-non-ascii-chars
 
-   
+
+
+##################################################
+   find and remove directories
+##################################################
+find ../webapps/ -maxdepth 1 -mindepth 1 -type d -exec rm -rf '{}' \;   
+
+
+
+
+##################################################
+   mass mv
+##################################################
+
+https://stackoverflow.com/a/6840404
+   for f in *.jpg; do mv "$f" "$(echo "$f" | sed s/IMG/VACATION/)"; done
+
+or simplier
+   for f in *.war; do mv "$f" "${f}_"; done
+
+
+
+##################################################
+   extract xml attribute values
+##################################################
+
+From log file like:
+31.03.2022 22:27:57_693	10.62.130.48:<?xml version="1.0" encoding="UTF-8" standalone="yes"?><mes type="byBpl"><percent repNd="ROHPGK0040300014" repId="42942163" repDateStart="11.10.2019" repYear="2021"/></mes>
+31.03.2022 22:28:15_56	10.62.130.48:<?xml version="1.0" encoding="UTF-8" standalone="yes"?><mes type="byBpl"><percent repNd="ROHPGK0040300014" repId="42942163" repDateStart="11.10.2019" repYear="2021"/></mes>
+31.03.2022 22:32:38_554	10.62.130.48:<?xml version="1.0" encoding="UTF-8" standalone="yes"?><mes type="byBpl"><percent repNd="ROHPGK0040300014" repId="42942163" repDateStart="11.10.2019" repYear="2021"/></mes>
+
+extract just attributes values in percent tag:
+	grep -oP 'repNd="([^"]*)" repId="([^"]*)" repDateStart="([^"]*)" repYear="([^"]*)"' inputXml.log | sed -E 's/repNd="([^"]*)" repId="([^"]*)" repDateStart="([^"]*)" repYear="([^"]*)"/\1;\2;\3;\4/'
