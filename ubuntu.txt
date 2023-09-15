@@ -362,9 +362,19 @@ Move window to a different workspace
    date
 ##################################################
 
-add N days to certain date
-
+add N days to certain date:
    date +%Y-%m-%d -d "2023-03-01 +5 days"
+
+current unix time seconds:
+   date +%s
+current unix time milliseconds (aka java System.currentTimeMillis()):
+   date +%s%3N
+current unix time nanoseconds:
+   date +%s%N
+
+certail date to unixtimems:
+   date -d '2023-01-01 00:00:00' +"%s%3N"
+
 
 
 ##################################################
@@ -388,10 +398,10 @@ PasswordAuthentication yes
 sudo service sshd restart
 
 3. На віддаленій тачці генеруєш собі новий ключик, обережно, щоб не перетерти людям дефолтний. 
-ssh-keygen -b 4096 -t rsa
+ssh-keygen -b 1024 -t rsa -E sha512 -f we2seek
 
 4. Далі потрібно цей ключик *.pub покласти на твою тачку
-ssh-copy-id -p100500 -i /path/to/id_rsa.pub LDAP@YOUR_IP
+ssh-copy-id -p100500 -oHostKeyAlgorithms=+ssh-dss -i ~/.ssh/we2seek.pub LDAP@YOUR_IP
 
 5. Прикриваємо на локальній тачці логін по паролю + рестарт сервісу sshd як у п.2
 
@@ -399,6 +409,9 @@ sudo vim /etc/ssh/sshd_config
 
 PasswordAuthentication no
 
+6. Тест підключення
+ssh -p100500 -oHostKeyAlgorithms=+ssh-dss -i ~/.ssh/we2seek LDAP@YOUR_IP
+scp -P100500 -oHostKeyAlgorithms=+ssh-dss -i ~/.ssh/we2seek LDAP@YOUR_IP:/path/to/source/file /path/to/destination/file
 
 
 
