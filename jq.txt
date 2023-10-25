@@ -97,6 +97,10 @@ cat .idea/httpRequests/2023-08-29T135236.200.json | jq '.activities[] | {id: .id
 }
 ...
 
+############################################
+Find items, where id contains "P24":
+   jq '.activities[] | {id:.id, date:.date, card:.card} | select(.id | contains("P24"))' ~/projects/tran-two/.idea/httpRequests/me-2018-01-01_2023-09-22.json
 
-
-
+############################################
+Count activities in json:
+   jq '.activities | length' ~/projects/tran-two/.idea/httpRequests/2023-10-25T180213.200.json

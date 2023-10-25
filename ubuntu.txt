@@ -373,9 +373,11 @@ current unix time nanoseconds:
    date +%s%N
 
 certail date to unixtimems:
+   date -d '2023-01-01 00:00:00' +%s
    date -d '2023-01-01 00:00:00' +"%s%3N"
 
-
+unixtimestamp to date
+   date -d @466635600
 
 ##################################################
    Scan used ports
