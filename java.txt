@@ -4,7 +4,16 @@
 [RUN]
     java -cp bin com.we2seek.test.App
 
+
+[INTELLIJ workaround for fonts on Linux]
+    https://gist.github.com/CrazyCoder/0d9e54f450000d3fb6edcbda6d9788be
+    
+    add -Djava2d.font.loadFontConf=false JVM option (Before project loading, Select "Configure" -> "Edit custom VM options")
+
 [INSTALL]
+# priority. the higer number, the high (best) priority in auto mode
+
+# manual mode, update every link group by hands:
     sudo update-alternatives --install /usr/bin/java java /<path-to-your-java-dir>/jre/bin/java 1100
     sudo update-alternatives --install /usr/bin/javac java /<path-to-your-java-dir>/jre/bin/javac 1100
     sudo update-alternatives --install /usr/bin/javaws java /<path-to-your-java-dir>/jre/bin/javaws 1100
@@ -14,7 +23,28 @@
     sudo update-alternatives --config javaws
     sudo update-alternatives --config jvisualvm
 
-[INTELLIJ workaround for fonts on Linux]
-    https://gist.github.com/CrazyCoder/0d9e54f450000d3fb6edcbda6d9788be
-    
-    add -Djava2d.font.loadFontConf=false JVM option (Before project loading, Select "Configure" -> "Edit custom VM options")
+
+# script mode, setup default jvm alternatives once
+#/bin/bash
+sudo update-alternatives --install /usr/bin/java      java      /usr/lib/jvm/default/bin/java      1510
+sudo update-alternatives --install /usr/bin/javac     javac     /usr/lib/jvm/default/bin/javac     1510
+sudo update-alternatives --install /usr/bin/javadoc   javadoc   /usr/lib/jvm/default/bin/javadoc   1510
+sudo update-alternatives --install /usr/bin/jvisualvm jvisualvm /usr/lib/jvm/default/bin/jvisualvm 1510
+
+sudo update-alternatives --set java      /usr/lib/jvm/default/bin/java
+sudo update-alternatives --set javac     /usr/lib/jvm/default/bin/javac
+sudo update-alternatives --set javadoc   /usr/lib/jvm/default/bin/javadoc
+sudo update-alternatives --set jvisualvm /usr/lib/jvm/default/bin/jvisualvm
+
+#
+# DO NOT RUN update-alternatives every time!
+#
+# In order not to use update-alternatives on every link group (java, javac etc.)
+# just update symlink to default java, e.g.:
+
+# remove old symlink
+rm default
+
+# setup new
+ln -s jdk-17.0.9 default
+
