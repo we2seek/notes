@@ -329,3 +329,9 @@ Command: J
     ci], ci}, or ci) — the same but w closing character
 
 
+
+::: VIMDIFF :::
+
+Useful shot vimdiff tutorial:
+    https://www.freecodecamp.org/news/compare-two-files-in-linux-using-vim
+
