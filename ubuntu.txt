@@ -451,3 +451,22 @@ or simplier
 
 
 
+##################################################
+   remove old kernels
+##################################################
+
+BE CAREFUL! DO NOT REMOVE CURRENT KERNEL!
+
+dpkg --list | grep linux-image | awk '{ print $2 }' | sort -V | sed -n '/'`uname -r`'/q;p' | xargs sudo apt-get -y purge
+
+dpkg --list | grep 'linux-image' | awk '{ print $2 }' | sort -V | sed -n '/'"$(uname -r | sed "s/\([0-9.-]*\)-\([^0-9]\+\)/\1/")"'/q;p' | xargs sudo apt-get -y purge
+dpkg --list | grep 'linux-headers' | awk '{ print $2 }' | sort -V | sed -n '/'"$(uname -r | sed "s/\([0-9.-]*\)-\([^0-9]\+\)/\1/")"'/q;p' | xargs sudo apt-get -y purge
+
+
+
+
+##################################################
+   clean screen and list files (oneliner)
+##################################################
+
+while true; do printf "\033c"; ls -al; sleep 1; done

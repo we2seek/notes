@@ -104,3 +104,25 @@ Find items, where id contains "P24":
 ############################################
 Count activities in json:
    jq '.activities | length' ~/projects/tran-two/.idea/httpRequests/2023-10-25T180213.200.json
+
+
+
+################################################################################
+   display just desired fields as a table
+################################################################################   
+@tsv -- tab separated values
+@csv -- comma separated values
+
+   jq -r '.activities[] | [.date, .amount, .fee, .balance, .details] | @tsv' /tmp/1.json
+   
+output:
+   
+25.09.2023 19:27:46	11.79	0	80.4	Зарахування зі Скарбнички
+23.09.2023 15:24:03	-30		0	68.61	PARKING NASHA PRAVDA, DNIPRO
+22.09.2023 22:37:38	-13.9	0	98.61	FDY*Recreation_s, Kyiv
+
+
+Also produces the same output:
+
+   jq -r '.activities[] | "\(.date)\t\(.amount)\t\(.fee)\t\(.balance)\t\(.details)"' /tmp/1.json
+
