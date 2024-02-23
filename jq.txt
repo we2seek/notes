@@ -126,3 +126,11 @@ Also produces the same output:
 
    jq -r '.activities[] | "\(.date)\t\(.amount)\t\(.fee)\t\(.balance)\t\(.details)"' /tmp/1.json
 
+
+
+
+################################################################################
+   GET_ADDR_UA
+################################################################################   
+
+   jq -r '.r[].CL_INF[].Addr[] | [.ContactType, .AddrDTM, .UADKind, .UADId] | @tsv' /tmp/1.json
