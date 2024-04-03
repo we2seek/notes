@@ -456,7 +456,8 @@ https://stackoverflow.com/a/6840404
 or simplier
    for f in *.war; do mv "$f" "${f}_"; done
 
-
+one more way
+   for i in *.war; do mv ${i} ${i/.war/.war_$(date '+%Y%m%d_%H%M%S')}; done;
 
 ##################################################
    remove old kernels
