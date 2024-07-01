@@ -32,9 +32,11 @@ docker image ls
 
 
 # remove images
-docker rmi <IMAGE ID> [<ANOTHER IMAGE ID>]
-docker image prune
-
+docker rmi <IMAGE ID> [<ANOTHER IMAGE ID>]        (remove a docker image)
+docker rmi <IMAGE NAME>                           (remove a docker image)
+docker rmi $(docker images -q -f dangling=true)   (remove untagged [dangling] images)
+docker rmi $(docker images -q)                    (remove all images)
+docker image prune                                (remove unused images) 
 
 
 # rename image
@@ -94,9 +96,9 @@ docker ps --help (more info)
 
 # remove container
 docker rm <CONTAINER ID> [<ANOTHER CONTAINER ID>]
-docker container prune
-docker rmi $(docker images -q)
-
+docker kill $(docker ps -q)    (kill all running containers)
+docker rm $(docker ps -a -q)   (delete all stopped docker containers)
+docker container prune         (remove all stopped containers)
 
 
 # attach to running container
@@ -119,3 +121,17 @@ stop:
 to use shortcuts:
    make run
    make stop
+
+
+# example: run container with external storage
+   docker run -p 27017:27017 --name some-mongo -v /tmp/docker/mongo/:/data/db -d mongo
+   docker run -p 3306:3306 --name some-mysql -v /tmp/docker/mysql/:/var/lib/mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -d mysql
+
+
+
+# cleaning up volumes
+# Once a volume is no longed associated with a container, it is considered "dangling"
+
+# remove all dangling volumes
+# NOTE: Does not remove files from host system in shared volumes
+   docker volume rm $(docker volume ls -f -q dangling=true)
