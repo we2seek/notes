@@ -332,7 +332,7 @@ Command: J
 
 ::: VIMDIFF :::
 
-Useful shot vimdiff tutorial:
+Useful short vimdiff tutorial:
     https://www.freecodecamp.org/news/compare-two-files-in-linux-using-vim
 More compact version:
     https://devhints.io/vim-diff
